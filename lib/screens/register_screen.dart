@@ -79,7 +79,10 @@ class RegisterScreen extends StatelessWidget {
                 const SizedBox(height: 10),
 
                 // register button
-               ThemeButton(onPressed: (){}, svgIcon: iconApp.login, text: "login_msg"),
+                ThemeButton(
+                    onPressed: () {},
+                    svgIcon: iconApp.login,
+                    text: "login_msg"),
 
                 // space
                 const SizedBox(height: 10),
@@ -94,7 +97,7 @@ class RegisterScreen extends StatelessWidget {
                 // ),
               ],
             ),
-            const DecorationBat(),
+            const DecorationBar(),
           ],
         ),
       ),

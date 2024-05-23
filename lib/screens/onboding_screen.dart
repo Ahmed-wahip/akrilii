@@ -35,7 +35,7 @@ class _OnbordingScreenState extends State<OnbordingScreen> {
         child: Stack(
           alignment: Alignment.center,
           children: [
-            const DecorationBat(),
+            const DecorationBar(),
 
             // Onbording viow
             PageView.builder(

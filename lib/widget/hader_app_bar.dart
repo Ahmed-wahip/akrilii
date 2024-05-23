@@ -1,11 +1,13 @@
 import 'package:akrilii/core/color_app.dart';
 import 'package:akrilii/core/font_app.dart';
 import 'package:akrilii/core/icon_app.dart';
-import 'package:akrilii/core/size_app.dart';
+import 'package:akrilii/core/navigator_app.dart';
+
+import 'package:akrilii/screens/scersh_screen.dart';
 import 'package:akrilii/widget/svg_button.dart';
 import 'package:flutter/material.dart';
 
-AppBar hederAppBar() {
+AppBar hederAppBar(BuildContext context) {
   return AppBar(
     leading: const Padding(padding: EdgeInsets.all(0)),
     title: Padding(
@@ -25,10 +27,7 @@ AppBar hederAppBar() {
         child: Row(
           children: [
             SvgButton(
-              onPressed: () {
-                // ignore: avoid_print
-                print(SizeApp.screenWidth! * 0.876);
-              },
+              onPressed: () => navigatorApp(context, const SershScreen()),
               svgIcon: iconApp.sershIcon,
             ),
             SvgButton(

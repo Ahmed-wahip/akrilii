@@ -97,12 +97,12 @@ class LoginScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     ImageCard(
-                      onPressed: (){},
+                      onPressed: () {},
                       svgIcon: iconApp.arrowLeft,
                       size: 60,
                     ),
                     ImageCard(
-                      onPressed: (){},
+                      onPressed: () {},
                       svgIcon: iconApp.arrowLeft,
                       size: 60,
                     ),
@@ -110,7 +110,7 @@ class LoginScreen extends StatelessWidget {
                 )
               ],
             ),
-            const DecorationBat(),
+            const DecorationBar(),
           ],
         ),
       ),

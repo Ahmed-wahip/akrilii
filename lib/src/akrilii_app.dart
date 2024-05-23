@@ -16,7 +16,7 @@ class AkriliiApp extends StatelessWidget {
     return BlocBuilder<NavigatorBarBloc, NavigatorBarState>(
       builder: (context, state) {
         return Scaffold(
-          appBar: hederAppBar(),
+          appBar: hederAppBar(context),
           body: AnimatedContainer(
             duration: const Duration(seconds: 1),
             child: screenOfNavigatorBar[blocNavigator.currenIndex],
