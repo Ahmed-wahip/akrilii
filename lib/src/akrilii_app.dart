@@ -1,7 +1,8 @@
-import 'package:akrilii/bloc/navigator_bloc.dart';
+import 'package:akrilii/bloc/navigator_batton/navigator_bloc.dart';
 import 'package:akrilii/core/color_app.dart';
+import 'package:akrilii/core/size_app.dart';
 import 'package:akrilii/functions/navigator_button.dart';
-import 'package:akrilii/model/navigator_model.dart';
+import 'package:akrilii/data/navigator_data.dart';
 import 'package:akrilii/widget/hader_app_bar.dart';
 import 'package:akrilii/widget/navigator_bar.dart';
 import 'package:flutter/material.dart';
@@ -16,14 +17,16 @@ class AkriliiApp extends StatelessWidget {
     return BlocBuilder<NavigatorBarBloc, NavigatorBarState>(
       builder: (context, state) {
         return Scaffold(
-          appBar: hederAppBar(context),
+          appBar: hederAppBar(context, blocNavigator.currenIndex),
           body: AnimatedContainer(
             duration: const Duration(seconds: 1),
-            child: screenOfNavigatorBar[blocNavigator.currenIndex],
+            child: navigatorBarItems
+                .navigatorItems[blocNavigator.currenIndex].screen,
           ),
           bottomNavigationBar: Container(
-            margin: const EdgeInsets.all(15),
+            margin: EdgeInsets.all(10.w),
             height: 55.5.h,
+            width: SizeApp.screenWidth! * 1,
             decoration: BoxDecoration(
               color: ColorApp.backgroundColor,
               boxShadow: [
@@ -36,7 +39,7 @@ class AkriliiApp extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
             ),
             child: ListView.builder(
-              itemCount: navigatorBarIcon.length,
+              itemCount: navigatorBarItems.navigatorItems.length,
               scrollDirection: Axis.horizontal,
               padding: const EdgeInsets.all(7.2),
               itemBuilder: (context, index) => GestureDetector(

@@ -1,7 +1,7 @@
-import 'package:akrilii/components/home_page_1.dart';
-import 'package:akrilii/components/home_page_2.dart';
-import 'package:akrilii/components/home_page_3.dart';
-import 'package:akrilii/components/home_page_4.dart';
+import 'package:akrilii/components/rental_car_view.dart';
+import 'package:akrilii/components/wedding_car_viow.dart';
+import 'package:akrilii/components/houses_rent_view.dart';
+import 'package:akrilii/components/jobs_view.dart';
 import 'package:akrilii/widget/heder_tap_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -19,10 +19,25 @@ class HomeScreen extends StatelessWidget {
             Expanded(
               child: TabBarView(
                 children: [
-                  HomePage1(),
-                  HomePage2(),
-                  HomePage3(),
-                  HomePage4(),
+                  //* pade Rental Car
+                  // model of AppServesInfo
+                  // data of RentalCarData
+                  RentalCarView(),
+
+                  //* page WeddingCar
+                  // model of AppServesInfo
+                  //  data of weddingCarData
+                  WeddingCarViow(),
+
+                  //* page Houses Rent
+                  // model of AppServesInfo
+                  // data of HousesRentDart
+                  HousesRentView(),
+
+                  //* page japs
+                  // model of AppServesInfo
+                  // data of jopsData
+                  JobsView(),
                 ],
               ),
             ),

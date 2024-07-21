@@ -18,28 +18,31 @@ class ThemeButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton.icon(
-      onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        backgroundColor: ColorApp.primaryColor,
-        minimumSize: const Size(double.infinity, 56),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.r),
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 25.w),
+      child: ElevatedButton.icon(
+        onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: ColorApp.primaryColor,
+          minimumSize: const Size(double.infinity, 56),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.r),
+          ),
         ),
-      ),
-      icon: SvgPicture.asset(
-        svgIcon,
-        color: ColorApp.backgroundColor,
-        height: 22.h,
-      ),
-      label: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Text(
-          text.tr(context),
-          style: TextStyle(
-            fontFamily: FontApp.bold,
-            fontSize: 20.sp,
-            color: ColorApp.backgroundColor,
+        icon: SvgPicture.asset(
+          svgIcon,
+          color: ColorApp.backgroundColor,
+          height: 22.h,
+        ),
+        label: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            text.tr(context),
+            style: TextStyle(
+              fontFamily: FontApp.bold,
+              fontSize: 20.sp,
+              color: ColorApp.backgroundColor,
+            ),
           ),
         ),
       ),

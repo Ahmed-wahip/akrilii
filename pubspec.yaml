@@ -30,10 +30,9 @@ dev_dependencies:
   flutter_lints: ^4.0.0
 
 flutter_native_splash:
-  color: "#212121"
-  image: assets/images/Akrilii.png
+  color: "#ffffff"
+  image: "assets/images/akrilii-logo.png"
   android_gravity: fill
-  # branding: assets/images/name.png
   android: true
   ios: true
   web: true
@@ -41,7 +40,7 @@ flutter_native_splash:
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/images/Akrilii.png"
+  image_path: "assets/images/akrilii-logo.png"
   min_sdk_android: 21
 
 flutter:

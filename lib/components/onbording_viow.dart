@@ -1,10 +1,10 @@
 import 'package:akrilii/core/size_app.dart';
 import 'package:akrilii/enums/text_type.dart';
-import 'package:akrilii/model/onboarding_items.dart';
+import 'package:akrilii/data/onboarding_data.dart';
 import 'package:akrilii/theme/theme_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 
 class OnbordingViow extends StatelessWidget {
   const OnbordingViow({
@@ -22,7 +22,7 @@ class OnbordingViow extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        SvgPicture.asset(
+        Image.asset(
           onboardingItemsController.onbordingItems[index].image,
           height: SizeApp.screenHeight! * .30.h,
         ),

@@ -1,4 +1,4 @@
-import 'package:akrilii/bloc/navigator_bloc.dart';
+import 'package:akrilii/bloc/navigator_batton/navigator_bloc.dart';
 import 'package:akrilii/core/color_app.dart';
 import 'package:akrilii/core/localizations_app.dart';
 import 'package:akrilii/core/size_app.dart';
@@ -60,7 +60,7 @@ class _RootAppState extends State<RootApp> {
               appBarTheme:
                   AppBarTheme(backgroundColor: ColorApp.backgroundColor),
               scaffoldBackgroundColor: ColorApp.backgroundColor,
-              colorScheme: ColorScheme.dark(
+              colorScheme: ColorScheme.light(
                 primary: ColorApp.auxiliaryColor,
               ),
               useMaterial3: true,

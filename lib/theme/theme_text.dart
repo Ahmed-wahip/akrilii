@@ -17,25 +17,25 @@ class ThemeText extends StatelessWidget {
       style = TextStyle(
         color: ColorApp.titelColor,
         fontFamily: FontApp.bold,
-        fontSize: 27.sp,
+        fontSize: 22.sp,
       );
     } else if (textType == TextType.description) {
       style = TextStyle(
         color: ColorApp.descriptionColor,
         fontFamily: FontApp.light,
-        fontSize: 25.sp,
+        fontSize: 20.sp,
       );
     } else if (textType == TextType.text) {
       style = TextStyle(
         color: ColorApp.textColor,
         fontFamily: FontApp.light,
-        fontSize: 25.sp,
+        fontSize: 20.sp,
       );
     } else if (textType == TextType.reguler) {
       style = TextStyle(
         color: ColorApp.regulerColor,
         fontFamily: FontApp.reguler,
-        fontSize: 20.sp,
+        fontSize: 17.sp,
       );
     }
 

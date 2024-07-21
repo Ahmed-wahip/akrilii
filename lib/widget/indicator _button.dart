@@ -1,7 +1,8 @@
 // ignore_for_file: file_names
 
 import 'package:akrilii/core/icon_app.dart';
-import 'package:akrilii/model/onboarding_items.dart';
+import 'package:akrilii/core/localizations_app.dart';
+import 'package:akrilii/data/onboarding_data.dart';
 import 'package:akrilii/theme/theme_icon.dart';
 import 'package:akrilii/widget/dot_indicator.dart';
 import 'package:flutter/cupertino.dart';
@@ -28,7 +29,7 @@ class IndicatorBar extends StatelessWidget {
           ),
         ),
         const Spacer(),
-        ThemeIcon(onPressed: onPressed, svgIcon: iconApp.arrowLeft)
+        ThemeIcon(onPressed: onPressed, svgIcon: iconApp.arrowLeft.tr(context))
       ],
     );
   }

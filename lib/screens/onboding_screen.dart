@@ -3,7 +3,7 @@ import 'package:akrilii/core/color_app.dart';
 import 'package:akrilii/core/icon_app.dart';
 import 'package:akrilii/core/navigator_app.dart';
 import 'package:akrilii/enums/text_type.dart';
-import 'package:akrilii/model/onboarding_items.dart';
+import 'package:akrilii/data/onboarding_data.dart';
 
 import 'package:akrilii/src/akrilii_app.dart';
 import 'package:akrilii/theme/theme_animated.dart';
@@ -35,7 +35,7 @@ class _OnbordingScreenState extends State<OnbordingScreen> {
         child: Stack(
           alignment: Alignment.center,
           children: [
-            const DecorationBar(),
+            const DecorationBar(viewbackButton: false),
 
             // Onbording viow
             PageView.builder(

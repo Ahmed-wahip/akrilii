@@ -1,7 +1,7 @@
 import 'package:akrilii/core/color_app.dart';
 import 'package:akrilii/core/font_app.dart';
 import 'package:akrilii/core/localizations_app.dart';
-import 'package:akrilii/model/navigator_model.dart';
+import 'package:akrilii/data/navigator_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -54,7 +54,9 @@ class NavigatorBar extends StatelessWidget {
                     opacity: index == currenIndex ? 1 : 0,
                     duration: const Duration(seconds: 1),
                     child: SmoilText(
-                      text: index == currenIndex ? navigatorBatText[index] : "",
+                      text: index == currenIndex
+                          ? navigatorBarItems.navigatorItems[index].titel
+                          : "",
                     ),
                   ),
                 ],
@@ -69,7 +71,7 @@ class NavigatorBar extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: SvgPicture.asset(
-                      navigatorBarIcon[index],
+                      navigatorBarItems.navigatorItems[index].svgIcon,
                       height: 25.h,
                       color: index == currenIndex
                           ? ColorApp.primaryColor

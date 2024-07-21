@@ -1,20 +1,26 @@
 import 'package:akrilii/core/color_app.dart';
 import 'package:akrilii/core/size_app.dart';
+import 'package:akrilii/enums/text_type.dart';
+import 'package:akrilii/theme/theme_normal_text.dart';
+import 'package:akrilii/theme/theme_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class NotificationsView extends StatelessWidget {
   final VoidCallback onPressed;
   final String userName;
-  final String description;
-  final String image;
-  final int price;
+  final String userEmail;
+  final String titel;
+  final String imageSrc;
+  final double price;
   const NotificationsView({
     super.key,
     required this.userName,
-    required this.description,
-    required this.image,
+    required this.titel,
+    required this.imageSrc,
     required this.price,
     required this.onPressed,
+    required this.userEmail,
   });
 
   @override
@@ -23,7 +29,7 @@ class NotificationsView extends StatelessWidget {
       margin: const EdgeInsets.all(10),
       // padding: const EdgeInsets.all(10),
       width: SizeApp.screenWidth!,
-      height: SizeApp.screenHeight! / 6,
+      height: SizeApp.screenHeight! / 2.5,
       decoration: BoxDecoration(
         color: ColorApp.backgroundColor,
         borderRadius: BorderRadius.circular(10),
@@ -43,24 +49,51 @@ class NotificationsView extends StatelessWidget {
         ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Row(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Text(userName),
-                  Text(description),
-                  Text("price of $price\$ on dey"),
-                ],
+              ListTile(
+                leading: CircleAvatar(
+                  backgroundImage: AssetImage(
+                    "assets/images/user-image.jpg",
+                  ),
+                ),
+                title: ThemeNormalText(
+                  color: ColorApp.titelColor,
+                  fontSize: 16,
+                  text: userName,
+                  fontWeight: FontWeight.bold,
+                ),
+                subtitle: ThemeNormalText(
+                  color: ColorApp.auxiliaryColor,
+                  fontSize: 15,
+                  text: userEmail,
+                ),
               ),
-              const Spacer(),
               Container(
-                width: SizeApp.screenHeight! / 6,
-                height: SizeApp.screenHeight! / 6,
+                width: SizeApp.screenWidth!,
+                height: SizeApp.screenHeight! / 5.5.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Colors.amber,
+                  image: DecorationImage(
+                    image: NetworkImage(imageSrc),
+                    fit: BoxFit.cover,
+                  ),
                 ),
+              ),
+              Row(
+                children: [
+                  ThemeText(
+                    text: "price_serves",
+                    textType: TextType.text,
+                  ),
+                  ThemeNormalText(
+                    text: " :$price",
+                    color: ColorApp.hintColor,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ],
               ),
             ],
           ),

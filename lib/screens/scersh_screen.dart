@@ -1,11 +1,11 @@
+import 'package:akrilii/functions/search_to_car.dart';
+import 'package:akrilii/functions/search_to_house.dart';
+import 'package:akrilii/functions/search_to_jops.dart';
+import 'package:akrilii/components/servies_search_view.dart';
 import 'package:akrilii/core/color_app.dart';
-import 'package:akrilii/core/size_app.dart';
-import 'package:akrilii/enums/text_type.dart';
-import 'package:akrilii/theme/theme_text.dart';
+import 'package:akrilii/core/icon_app.dart';
 import 'package:akrilii/widget/decoration_bar.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SershScreen extends StatelessWidget {
   const SershScreen({super.key});
@@ -14,39 +14,40 @@ class SershScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorApp.backgroundColor,
-      body: const SafeArea(
+      body: SafeArea(
         child: Column(
           children: [
-            Expanded(
-              child: DecorationBar(titelScreen: "serch_screen_titel"),
+            const Expanded(
+              flex: 1,
+              child: DecorationBar(
+                titelScreen: "serch_screen_titel",
+                viewbackButton: true,
+              ),
             ),
-            Expanded(child: ServesInfo()),
+            Expanded(
+              flex: 3,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  ServiesSearchView(
+                    titel: "serch_to_car",
+                    onPreesd: () => searchToCar(context),
+                    svgIcon: iconApp.carIconSearch,
+                  ),
+                  ServiesSearchView(
+                    titel: "serch_to_house",
+                    onPreesd: () => searchToHouse(context),
+                    svgIcon: iconApp.houseIconSearch,
+                  ),
+                  ServiesSearchView(
+                    titel: "serch_to_jops",
+                    onPreesd: () => searchToJops(context),
+                    svgIcon: iconApp.jopsIconSearch,
+                  ),
+                ],
+              ),
+            ),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class ServesInfo extends StatelessWidget {
-  const ServesInfo({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: SizeApp.screenWidth! * 1,
-      height: 60.h,
-      child: ListTile(
-        onTap: () {},
-        leading: CircleAvatar(
-          backgroundColor: ColorApp.primaryColor,
-          child: Icon(Icons.car),
-        ),
-        title: const ThemeText(
-          text: "serch_to_car",
-          textType: TextType.reguler,
         ),
       ),
     );
